@@ -32,7 +32,6 @@ body {
 
 .brand > a {
     font-size: 2em;
-    font-weight: 900;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-variant: small-caps;
     color: rgb(223, 221, 217);
@@ -132,7 +131,7 @@ h2 {
 
 p {
     font-size: 18px;
-    line-height: 28px;
+    line-height: 27px;
 }
 
 #bioImage {
