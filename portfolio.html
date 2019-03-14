@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gallery | Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="assets/images/faviconTree.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/portfolio.css">
+</head>
+
+<body class="preload">
+
+<div id="wrapper">
+
+<!------- Brand and Navigation ------->
+<header>
+    <div id="headerWrapper">
+    <section id="header">
+        <nav id="topNavbar">
+            <ul>
+                <li class="brand" style="float:left"><a href="index.html">Joey Kubalak</a></li>
+                <li class="navLinks" style="float:right"><a href="contact.html">Contact</a></li>
+                <li class="active" style="float:right"><a href="portfolio.html">Portfolio</a></li>
+                <li class="navLinks" style="float:right"><a href="index.html">About</a></li>
+            </ul>    
+        </nav>
+    </section>   
+    </div>   
+</header>
+
+<!------- Main Content ------->
+
+<div id="mainWrapper">
+<section id="mainContent">
+    <h2>Portfolio</h2>
+    <h3>My Projects: </h3>
+    <div class="projectWrapper">
+        <div class="item">
+        <a href="https://treezcode.github.io/HW-Wireframe/" target="_blank"><img src="assets/images/wireframe.png" alt="Basic Wireframe"></a>
+        <p><a href="https://treezcode.github.io/HW-Wireframe/" target="_blank">Basic Web Wireframe</a></p>
+        </div>
+        <div class="item1">
+        <a href="https://treezcode.github.io/cssRobot/" target="_blank"><img src="assets/images/roboNug.png" alt="Robot Android"></a>
+        <p><a href="https://treezcode.github.io/cssRobot/" target="_blank">CSS Robot</a></p>
+        </div>
+        <div class="item2">
+        <a href="https://scratch.mit.edu/projects/287438455/" target="_blank"><img src="assets/images/pacmanRev.png" alt="PAC-MAN Game"></a>
+        <p><a href="https://scratch.mit.edu/projects/287438455/" target="_blank">PAC-MAN Game</a></p>
+        </div>
+    </div>
+    <h2></h2>
+    <h3>Languages I've Created Projects With:</h3>
+    <div class="galleryWrapper">
+        <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank"><img src="assets/images/HTML5-logo.jpg" alt="HTML Logo"></a>
+        <a href="https://www.w3schools.com/css/css_intro.asp" target="_blank"><img src="assets/images/CSS-logo.jpg" alt="CSS Logo"></a>
+        <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank"><img src="assets/images/JS-logo.jpg" alt="Javascript Logo"></a>
+        <a href="https://scratch.mit.edu/" target="_blank"><img src="assets/images/scratch-logo.jpg" alt="ScratchMIT Logo"></a>
+    </div>
+</section>
+</div>          
+
+<!------- Contact/Footer ------->
+<footer>
+    <div id="footerWrapper">
+    <section id="footer">
+        <div id="contact-info">
+            <ul>
+                <li class="contactLinks"><a href="mailto:Jkube537@gmail.com">Email: Jkube537@gmail.com</a></li>
+                <li class="contactLinks"><a href="https://github.com/TreezCode/TreezCode.github.io" target="_blank">GitHub: TreezCode</a></li>
+                <li class="contactLinks"><a href="https://scratch.mit.edu/users/iamtreez/" target="_blank">ScratchMIT: iamTreez</a></li>
+            </ul>
+        </div>
+    </section>
+    </div>
+</footer>
+
+</div>
+
+<!-------- Javascript -------->
+
+<!-- This removes the "preload" class from the body after page loads -->
+<script>
+    $(window).load(function() {
+      $("body").removeClass("preload");
+    });
+</script>
+
+</body>
+
+</html>
