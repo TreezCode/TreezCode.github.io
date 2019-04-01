@@ -2,90 +2,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="assets/images/faviconTree.png">
-<!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Bitter|Karla|Roboto:300" rel="stylesheet">
-<!-- Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- CSS Reset -->
+    <!-- Personal Stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<!-- Custom Stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <title>Contact | Portfolio</title>
 </head>
 
-<body> 
-<!-- Footer Hack -->
+<body class="preload">
+    
 <div class="sticky-footer">
 
-<!-- Navbar -->
-<nav class="my-navbar navbar navbar-expand-md navbar-dark bg-dark px-2">
-    <div class="container p-0">
-        <a class="navbar-brand w-100" href="#">Joey Kubalak</a>
-        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav text-center ml-auto">
-                <a class="nav-item nav-link text-light rounded mx-sm-2" href="index.html">About</a>
-                <a class="nav-item nav-link text-light rounded mx-sm-2" href="portfolio.html">Portfolio</a>
-                <a class="nav-item1 nav-link rounded ml-sm-2 active" href="contact.html">Contact<span class="sr-only">(current)</span></a>
-            </div>
-        </div>
-    </div>
-</nav>
+<!-- Brand and Navigation  -->
+<header>
+<section id="header">
+    <nav id="topNavbar">
+        <ul>
+            <li class="brand" style="float:left"><a href="index.html">Joey Kubalak</a></li>
+            <li class="active" style="float:right"><a href="contact.html">Contact</a></li>
+            <li class="navLinks" style="float:right"><a href="portfolio.html">Portfolio</a></li>
+            <li class="navLinks" style="float:right"><a href="index.html">About</a></li>
+        </ul>    
+    </nav>
+</section>      
+</header>
+    
 
-<!-- Contact Form-->
-<div class="my-form container rounded text-white mt-sm-5 mb-5">
-    <div class="form-title">
-        <h2>Contact</h2>
-    </div>
+<!------- Contact Content ------->
+<div id="contact-wrapper">
+    <h2 id="contact-title">Contact</h2>
     <form method="POST">
-        <div class="form-group py-3">
-            <label class="label-text pb-2" for="exampleFormControlInput1">Name</label>
-            <input type="name" class="form-control" id="exampleFormControlInput1" name="fname" placeholder="Jane Doe">
-        </div>
-        <div class="form-group py-3">
-            <label class="label-text pb-2" for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="DougheyJane@example.com">
-        </div>
-        <div class="form-group py-3">
-            <label class="label-text pb-2" for="exampleFormControlTextarea1">Message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        </div>
-        <div class="form-group py-3">
-            <input type="submit" value="Submit">
-        </div>
+        <label for="fname">Name :</label>
+        <input class="input" type="text" name="fname" placeholder="Jane Doe"><br>
+        <label for="fname">Email :</label>
+        <input class="input" type="email" name="email" placeholder="JaneDoe@email.com"><br>
+        <label for="fname">Message :</label>
+        <textarea class="input" name="message" rows="10" cols="30"></textarea><br>
+        <input type="submit" value="Submit">
     </form>
-
 </div>
 
-
 </div>
-
+<!------- Contact/Footer ------->
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="text-center my-auto py-1 p-sm-1">
-                    <li class="contactLinks py-2"><a class="text-decoration-none text-secondary px-3" href="mailto:Jkube537@gmail.com">Email: Jkube537@gmail.com</a></li>
-                    <li class="contactLinks py-2"><a class="text-decoration-none text-secondary px-3" href="https://github.com/TreezCode/TreezCode.github.io" target="_blank">GitHub: TreezCode</a></li>
-                    <li class="contactLinks py-2"><a class="text-decoration-none text-secondary px-3" href="https://scratch.mit.edu/users/iamtreez/" target="_blank">ScratchMIT: iamTreez</a></li>
-                </ul>
-            </div>
-        </div>
+    <div id="footer-info">
+        <ul>
+            <li class="footerLinks"><a href="mailto:Jkube537@gmail.com">Email: Jkube537@gmail.com</a></li>
+            <li class="footerLinks"><a href="https://github.com/TreezCode?tab=repositories" target="_blank">GitHub: TreezCode</a></li>
+            <li class="footerLinks"><a href="https://scratch.mit.edu/users/iamtreez/" target="_blank">ScratchMIT: iamTreez</a></li>
+        </ul>
     </div>
 </footer>
 
 
-<!-- Javascript & JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-------- Javascript -------->
+
+<!-- This removes the "preload" class from the body after page loads -->
+<script>
+    $(window).load(function() {
+      $("body").removeClass("preload");
+    });
+</script>
 
 </body>
+
 </html>
