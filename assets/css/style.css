@@ -246,6 +246,10 @@ body::-webkit-scrollbar-thumb {
     padding-top: 1em;
 }
 
+.carousel-item {
+    max-height: 550px;
+}
+
 .carousel-caption {
     width: 100%;
     background: #111111d3;
