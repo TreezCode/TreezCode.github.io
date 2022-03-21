@@ -316,8 +316,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .fa-angle-left,
-.fa-angle-right {
-    color: lavender;
+.fa-angle-right,
+.fa-arrow-circle-up {
+    color: rgb(142, 0, 224);
 }
 /* Contact
 ================================================================== */
