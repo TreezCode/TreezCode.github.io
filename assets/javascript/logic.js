@@ -99,7 +99,7 @@ const images = [
     alt: 'Watercolor Wall Art Splash Silhouette Digital Print',
     href: 'https://www.etsy.com/shop/TranscendentTreez',
     id: 6,
-    category: 'Splash Silhouette',
+    category: 'Splash-Silhouette',
     title: 'Watercolor Waltz',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
@@ -108,7 +108,7 @@ const images = [
     alt: 'Watercolor Wall Art Splash Silhouette Digital Print',
     href: 'https://www.etsy.com/shop/TranscendentTreez',
     id: 7,
-    category: 'Splash Silhouette',
+    category: 'Splash-Silhouette',
     title: 'Brushstroke Ballet',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
@@ -117,7 +117,7 @@ const images = [
     alt: 'Watercolor Wall Art Splash Silhouette Digital Print',
     href: 'https://www.etsy.com/shop/TranscendentTreez',
     id: 8,
-    category: 'Splash Silhouette',
+    category: 'Splash-Silhouette',
     title: 'Effervescent Expression',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
@@ -126,7 +126,7 @@ const images = [
     alt: 'Watercolor Wall Art Splash Silhouette Digital Print',
     href: 'https://www.etsy.com/shop/TranscendentTreez',
     id: 9,
-    category: 'Splash Silhouette',
+    category: 'Splash-Silhouette',
     title: 'Painted Passion',
     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
@@ -220,7 +220,7 @@ function createImageElement(image) {
   const img = document.createElement('img');
   img.src = image.src;
   img.alt = image.alt;
-  img.id = image.id;
+  img.id = `${image.category}_${image.id}`;
   img.setAttribute('data-category', image.category);
   img.setAttribute('data-title', image.title);
   img.setAttribute('data-desc', image.desc);
