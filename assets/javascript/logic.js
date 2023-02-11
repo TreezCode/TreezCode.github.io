@@ -27,7 +27,7 @@ function scrollToElementWithOffset(elementId, offset) {
   });
 }
 
-// Handle offset
+// Handle scrolling offset to counter navbar
 var scrollLinks = document.querySelectorAll('.scroll-link');
 for (var i = 0; i < scrollLinks.length; i++) {
   scrollLinks[i].addEventListener('click', function (event) {
@@ -132,30 +132,28 @@ const images = [
   },
 ];
 
-// Get the original image array to filter the gallery
-let originalImages = [...images];
-
 // Store elements to render the gallery
 const galleryGrid = document.querySelector('.gallery-grid');
 const prevButton = document.querySelector('.page-item.disabled');
 const nextButton = document.querySelector('.page-item:not(.disabled)');
 
-// Set default values for current page and items per page
-let currentPage = 1;
+let originalImages = [...images];
 let itemsPerPage = 6;
+let currentPage = 1;
 
-// Function to update the content of the gallery based on the page number
-function showPage(pageNumber, images) {
-  // Clear existing content of the gallery
-  galleryGrid.innerHTML = '';
-
-  // Determine start and end indices for the current page
+/**
+ * Updates the content of the gallery based on the page number
+ *
+ * @param {number} pageNumber - The number of the current page
+ * @param {string} zoom - An array of image data
+ *
+ * @returns {void}
+ */
+function showPage(pageNumber, images) {  
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-
-  // Slice images to get the current images to display
   const currentImages = images.slice(startIndex, endIndex);
-  // Render each image to HTML
+  galleryGrid.innerHTML = '';
   currentImages.forEach((image) => createImageElement(image));
   updateButtons(currentPage, itemsPerPage, originalImages);
 }
@@ -178,28 +176,18 @@ function updateDisplayImages(filter) {
 // Function to filter images based on the selected filter
 function filterImages() {
   let selectedFilter = document.querySelector('.form-control').value;
-
-  // Get the original image array to filter the gallery
   originalImages = [...images];
   if (selectedFilter !== 'All') {
-    originalImages = originalImages.filter(
-      (img) => img.category === selectedFilter
-    );
+    originalImages = originalImages.filter(img => img.category === selectedFilter);
+    showPageInfo(currentPage, itemsPerPage, originalImages);
   }
-  // Remove the current images from the page
-  const currentImages = document.querySelectorAll('.image-wrap');
-  currentImages.forEach((img) => img.remove());
-  // Reset the current page to 1
   currentPage = 1;
-  // Show the first page of the filtered images
   showPage(currentPage, originalImages);
 }
-// Add event listener to the filter select element
-document.querySelector('.form-control').addEventListener('change', filterImages);
 
-// Listen for the change event on search input element to update the gallery
-const searchInput = document.querySelector('.search-input');
-searchInput.addEventListener('input', handleSearchInput);
+// Add event listener to the filter select and search input element
+document.querySelector('.form-control').addEventListener('change', filterImages);
+document.querySelector('.search-input').addEventListener('input', handleSearchInput);
 
 // Function to handle search input changes and render to display
 function handleSearchInput(event) {
@@ -207,11 +195,12 @@ function handleSearchInput(event) {
   const filteredImages = originalImages.filter((image) => {
     return (
       image.title.toLowerCase().includes(searchValue) ||
-      image.alt.toLowerCase().includes(searchValue)
+      image.desc.toLowerCase().includes(searchValue)
     );
   });
   showPage(1, filteredImages);
   updateButtons(1, itemsPerPage, filteredImages);
+  showPageInfo(currentPage, itemsPerPage, filteredImages);
 }
 
 // Define function to create an image element to be rendered
@@ -277,7 +266,7 @@ function createImageElement(image) {
   return imageWrap;
 }
 
-// Function to update the pagination buttons based on current state
+// Function to update display based on pagination buttons current state
 function updateButtons(currentPage, itemsPerPage, originalImages) {
   if (currentPage * itemsPerPage >= originalImages.length) {
     nextButton.classList.add('disabled');
@@ -291,6 +280,15 @@ function updateButtons(currentPage, itemsPerPage, originalImages) {
   }
 }
 
+// Function to display the current page and total number of pages
+function showPageInfo(currentPage, itemsPerPage, originalImages) {
+  const totalPages = Math.ceil(originalImages.length / itemsPerPage);
+  const pageInfo = `Page ${currentPage} of ${totalPages}`;
+  const pageInfoElement = document.getElementById('pageNumber');
+  pageInfoElement.innerHTML = pageInfo;
+}
+showPageInfo(currentPage, itemsPerPage, originalImages);
+
 // Pagination Buttons
 nextButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -298,6 +296,7 @@ nextButton.addEventListener('click', function (event) {
     currentPage++;
     showPage(currentPage, originalImages);
     updateButtons(currentPage, itemsPerPage, originalImages);
+    showPageInfo(currentPage, itemsPerPage, originalImages);
     scrollToElementWithOffset('gallery', 150);
   }
 });
@@ -307,6 +306,7 @@ prevButton.addEventListener('click', function (event) {
     currentPage--;
     showPage(currentPage, originalImages);
     updateButtons(currentPage, itemsPerPage, originalImages);
+    showPageInfo(currentPage, itemsPerPage, originalImages);
     scrollToElementWithOffset('gallery', 150);
   }
 });
@@ -327,7 +327,9 @@ let magnification = 2;
 function magnify(imgID, zoom) {
   // If the magnifier is not enabled, return
   if (!magnifierEnabled) return;
-  const img = document.getElementById(imgID);
+
+   // Get the image element with the given ID
+   const img = document.getElementById(imgID);
 
   // Remove any existing magnifying glasses to avoid duplicates
   const glasses = document.querySelectorAll('.img-magnifier-glass');
@@ -345,9 +347,10 @@ function magnify(imgID, zoom) {
   glass.style.backgroundRepeat = 'no-repeat';
   glass.style.backgroundSize = `${img.width * zoom}px ${img.height * zoom}px`;
 
+  // Variables to set the border width and half the width and height of the magnifier glass
   const bw = 3; // Border width
-  const w = glass.offsetWidth / 6; // Half of the width of the magnifier glass
-  const h = glass.offsetHeight / 6; // Half of the height of the magnifier glass
+  const w = glass.offsetWidth / 2; // Half of the width of the magnifier glass
+  const h = glass.offsetHeight / 2; // Half of the height of the magnifier glass
 
   function createMagnifier(e) {
     magnify(imgID, zoom);
@@ -361,15 +364,23 @@ function magnify(imgID, zoom) {
   glass.addEventListener('mousemove', moveMagnifier);
   img.addEventListener('mousemove', moveMagnifier);
 
-
-  // Function to move the magnifier glass as the mouse/finger moves over the image/glass
+  /**
+   * Move the magnifier glass as the mouse/finger moves over the image/glass
+   * @param {Event} e - The mouse or touch event
+   * @returns {void}
+   */
   function moveMagnifier(e) {
     e.preventDefault();
+
+    // Initialize x and y coordinates
     let x = 0, y = 0;
+
+    // Check if event is a touch event or mouse event
     if (e.touches) {
       x = e.touches[0].clientX;
       y = e.touches[0].clientY;
     } else {
+      // Get cursor position for mouse event
       const pos = getCursorPos(e);
       x = pos.x;
       y = pos.y;
@@ -378,23 +389,24 @@ function magnify(imgID, zoom) {
     // Check if cursor position is outside of image
     if (x > img.width || x < 0 || y > img.height || y < 0) {
       if (mouseInsideImage) {
+        // Remove magnifier glass if cursor is outside of image
         glass.remove();
         mouseInsideImage = false;
       }
       return;
     }
-    // Set the mouseInsideImage flag to true if the cursor is inside the image
+    // Set flag to true if cursor is inside image
     if (!mouseInsideImage) mouseInsideImage = true;
 
-    // Limit x and y within the bounds of the image, with a minimum distance of w/zoom or h/zoom from the edge of the image
+    // Limit x and y coordinates to within the bounds of the image
     x = Math.min(Math.max(x, w / zoom), img.width - w / zoom);
     y = Math.min(Math.max(y, h / zoom), img.height - h / zoom);
 
-    // Set the position of the magnifier glass
+    // Set the position of magnifier glass
     glass.style.left = `${x - w}px`;
     glass.style.top = `${y - h}px`;
 
-    // Set the background position of the magnifier glass
+    // Set the background position of magnifier glass
     glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${y * zoom - h + bw}px`;
   }
 
@@ -416,32 +428,11 @@ function magnify(imgID, zoom) {
   }
 }
 
-// Handle magnification state on user clicks
 const imageLinks = document.querySelectorAll('.img-link');
-let magnificationLevel = 1;
 imageLinks.forEach((link) => {
-  const childElement = link.children[0];
   link.addEventListener('click', function (event) {
     if (magnifierEnabled) {
-      let magnificationFactor;
       event.preventDefault();
-      // switch (magnificationLevel) {
-      //   case 1:
-      //     magnificationFactor = 4;
-      //     magnificationLevel = 2;
-      //     break;
-      //   case 2:
-      //     magnificationFactor = 6;
-      //     magnificationLevel = 3;
-      //     break;
-      //   case 3:
-      //     magnificationFactor = 2;
-      //     magnificationLevel = 1;
-      //     break;
-      //   default:
-      //     magnificationFactor = 2;
-      // }
-      magnify(childElement.id, magnification);
     }
   });
 });

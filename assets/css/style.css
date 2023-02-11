@@ -190,15 +190,19 @@ body::-webkit-scrollbar-thumb {
 
 .main-hero {
   color: lavender;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  /* font-weight: bold; */
   font-size: 2em;
-  font-weight: bold;
   letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .second-hero {
   color: cyan;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   font-size: 1.5em;
   letter-spacing: 1.5px;
 }
@@ -244,6 +248,7 @@ body::-webkit-scrollbar-thumb {
 ================================================================== */
 .about-wrap {
   min-height: 725px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .about-top {
@@ -258,6 +263,8 @@ body::-webkit-scrollbar-thumb {
 
 .about-top h2 {
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .about-top h5 {
@@ -302,7 +309,7 @@ body::-webkit-scrollbar-thumb {
 .projects-wrap h2 {
   color: #050505;
   text-align: center;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   padding: 2rem 0;
 }
 
@@ -370,7 +377,7 @@ body::-webkit-scrollbar-thumb {
 
 .gallery-wrap h2 {
   text-align: center;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 4rem;
 }
 
@@ -387,19 +394,22 @@ body::-webkit-scrollbar-thumb {
   width: 200px;
 }
 
+.search {
+  width: 100%;
+}
+
 .toggle-magnifier {
   font-family: 'Karla', sans-serif;
   font-variant: small-caps;
-  padding: 0.5rem 0.75rem;
   line-height: 1.25;
   color: lavender;
   background: rgba(54, 0, 54, 0.836);
   border: 1px solid rgba(76, 0, 121, 0.836);
 }
 
-.active[id=toggleMagnifier],
-.active[id=showDescriptionBtn] {
-    border: 1px solid #7a00dd;
+.active[id='toggleMagnifier'],
+.active[id='showDescriptionBtn'] {
+  border: 1px solid #7a00dd;
 }
 
 .toggle-magnifier:hover,
@@ -420,6 +430,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .image-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 .image-wrap button {
@@ -541,7 +553,8 @@ body::-webkit-scrollbar-thumb {
 
 .contact-top h2 {
   text-align: center;
-  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  /* font-weight: 400; */
   padding: 2rem 0;
 }
 
@@ -622,9 +635,9 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 676px) {
-.projects-grid .container {
+  .projects-grid .container {
     max-width: 100%;
-    }
+  }
   .nav-link {
     margin: 0.5em 2em;
   }
