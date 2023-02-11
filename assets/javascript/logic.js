@@ -229,7 +229,6 @@ function createImageElement(image) {
 
   // Create an image element
   const img = document.createElement('img');
-  console.log(img);
   img.src = image.src;
   img.alt = image.alt;
   img.id = image.id;

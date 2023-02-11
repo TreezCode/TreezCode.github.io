@@ -267,6 +267,7 @@ body::-webkit-scrollbar-thumb {
 
 .about-bottom {
   background: #050505;
+  margin-top: 1rem;
 }
 
 .about-content {
