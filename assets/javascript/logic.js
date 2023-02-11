@@ -56,7 +56,7 @@ const images = [
     id: 1,
     category: 'Owl',
     title: 'Cosmic Companion',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/owl_00-02.png',
@@ -65,7 +65,7 @@ const images = [
     id: 2,
     category: 'Owl',
     title: 'Fractal Feathered Friend',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/owl_01-02.png',
@@ -74,7 +74,7 @@ const images = [
     id: 3,
     category: 'Owl',
     title: 'Artistic Avian',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/owl_04-05.png',
@@ -83,7 +83,7 @@ const images = [
     id: 4,
     category: 'Owl',
     title: 'Nebula Night Owl',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/owl_02-00.png',
@@ -92,7 +92,7 @@ const images = [
     id: 5,
     category: 'Owl',
     title: 'Fractured Fascination',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-07_CLEAN.png',
@@ -101,7 +101,7 @@ const images = [
     id: 6,
     category: 'Splash Silhouette',
     title: 'Watercolor Waltz',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-20_CLEAN.png',
@@ -110,7 +110,7 @@ const images = [
     id: 7,
     category: 'Splash Silhouette',
     title: 'Brushstroke Ballet',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-25_CLEAN.png',
@@ -119,7 +119,7 @@ const images = [
     id: 8,
     category: 'Splash Silhouette',
     title: 'Effervescent Expression',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-26_00_CLEAN.png',
@@ -128,7 +128,7 @@ const images = [
     id: 9,
     category: 'Splash Silhouette',
     title: 'Painted Passion',
-    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
 ];
 
@@ -339,28 +339,41 @@ function magnify(imgID, zoom) {
 
   // Insert the magnifier glass into the image's parent element
   img.parentElement.insertBefore(glass, img);
-
+  
   // Set the background properties for the magnifier glass
   glass.style.backgroundImage = `url('${img.src}')`;
   glass.style.backgroundRepeat = 'no-repeat';
   glass.style.backgroundSize = `${img.width * zoom}px ${img.height * zoom}px`;
 
   const bw = 3; // Border width
-  const w = glass.offsetWidth / 2; // Half of the width of the magnifier glass
-  const h = glass.offsetHeight / 2; // Half of the height of the magnifier glass
+  const w = glass.offsetWidth / 6; // Half of the width of the magnifier glass
+  const h = glass.offsetHeight / 6; // Half of the height of the magnifier glass
+
+  function createMagnifier(e) {
+    magnify(imgID, zoom);
+  }
 
   // Add event listeners to the magnifier glass and the image
+  glass.addEventListener('touchstart', createMagnifier);
+  glass.addEventListener('touchmove', moveMagnifier);
+  img.addEventListener('touchstart', createMagnifier);
+  img.addEventListener('touchmove', moveMagnifier);
   glass.addEventListener('mousemove', moveMagnifier);
   img.addEventListener('mousemove', moveMagnifier);
-  glass.addEventListener('touchmove', moveMagnifier);
-  img.addEventListener('touchmove', moveMagnifier);
+
 
   // Function to move the magnifier glass as the mouse/finger moves over the image/glass
   function moveMagnifier(e) {
     e.preventDefault();
-    const pos = getCursorPos(e);
-    let x = pos.x;
-    let y = pos.y;
+    let x = 0, y = 0;
+    if (e.touches) {
+      x = e.touches[0].clientX;
+      y = e.touches[0].clientY;
+    } else {
+      const pos = getCursorPos(e);
+      x = pos.x;
+      y = pos.y;
+    }
 
     // Check if cursor position is outside of image
     if (x > img.width || x < 0 || y > img.height || y < 0) {
@@ -412,23 +425,23 @@ imageLinks.forEach((link) => {
     if (magnifierEnabled) {
       let magnificationFactor;
       event.preventDefault();
-      switch (magnificationLevel) {
-        case 1:
-          magnificationFactor = 4;
-          magnificationLevel = 2;
-          break;
-        case 2:
-          magnificationFactor = 6;
-          magnificationLevel = 3;
-          break;
-        case 3:
-          magnificationFactor = 2;
-          magnificationLevel = 1;
-          break;
-        default:
-          magnificationFactor = 2;
-      }
-      magnify(childElement.id, magnificationFactor);
+      // switch (magnificationLevel) {
+      //   case 1:
+      //     magnificationFactor = 4;
+      //     magnificationLevel = 2;
+      //     break;
+      //   case 2:
+      //     magnificationFactor = 6;
+      //     magnificationLevel = 3;
+      //     break;
+      //   case 3:
+      //     magnificationFactor = 2;
+      //     magnificationLevel = 1;
+      //     break;
+      //   default:
+      //     magnificationFactor = 2;
+      // }
+      magnify(childElement.id, magnification);
     }
   });
 });
