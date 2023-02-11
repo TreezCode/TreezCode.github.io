@@ -56,7 +56,7 @@ const images = [
     id: 1,
     category: 'Owl',
     title: 'Cosmic Companion',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/owl_00-02.png',
@@ -65,7 +65,7 @@ const images = [
     id: 2,
     category: 'Owl',
     title: 'Fractal Feathered Friend',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/owl_01-02.png',
@@ -74,7 +74,7 @@ const images = [
     id: 3,
     category: 'Owl',
     title: 'Artistic Avian',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/owl_04-05.png',
@@ -83,7 +83,7 @@ const images = [
     id: 4,
     category: 'Owl',
     title: 'Nebula Night Owl',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/owl_02-00.png',
@@ -92,7 +92,7 @@ const images = [
     id: 5,
     category: 'Owl',
     title: 'Fractured Fascination',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-07_CLEAN.png',
@@ -101,7 +101,7 @@ const images = [
     id: 6,
     category: 'Splash Silhouette',
     title: 'Watercolor Waltz',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-20_CLEAN.png',
@@ -110,7 +110,7 @@ const images = [
     id: 7,
     category: 'Splash Silhouette',
     title: 'Brushstroke Ballet',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-25_CLEAN.png',
@@ -119,7 +119,7 @@ const images = [
     id: 8,
     category: 'Splash Silhouette',
     title: 'Effervescent Expression',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
   {
     src: 'assets/images/website-gallery/splash_silhouette-26_00_CLEAN.png',
@@ -128,7 +128,7 @@ const images = [
     id: 9,
     category: 'Splash Silhouette',
     title: 'Painted Passion',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    desc: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
   },
 ];
 
@@ -459,8 +459,8 @@ toggleMagnifierBtn.addEventListener('click', function (e) {
     toggleMagnifierText.textContent = 'Enable Magnifier';
     e.target.classList.remove('active');
     buttonBody.classList.remove('active');
-    // // remove any existing magnifying glasses when magnifier is disabled
-    // const glasses = document.querySelectorAll('.img-magnifier-glass');
-    // glasses.forEach((glass) => glass.remove());
+    // remove any existing magnifying glasses when magnifier is disabled
+    const glasses = document.querySelectorAll('.img-magnifier-glass');
+    glasses.forEach((glass) => glass.remove());
   }
 });
