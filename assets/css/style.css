@@ -604,6 +604,9 @@ body::-webkit-scrollbar-thumb {
   .about-content {
     max-width: 90%;
   }
+  .projects-grid .container {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
   .carousel-caption {
@@ -619,6 +622,9 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media screen and (max-width: 676px) {
+.projects-grid .container {
+    max-width: 100%;
+    }
   .nav-link {
     margin: 0.5em 2em;
   }
@@ -634,8 +640,8 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media (max-width: 576px) {
-  .projects-grid .container {
-    max-width: 100%;
+  .projects-wrap {
+    min-height: 575px;
   }
 }
 @media screen and (max-width: 508px) {
@@ -668,7 +674,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 70% !important;
   }
   .projects-wrap {
-    min-height: 420px;
+    min-height: 500px;
   }
   .carousel-btn {
     font-size: 0.9em;
