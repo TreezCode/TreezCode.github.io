@@ -34,7 +34,7 @@ for (var i = 0; i < scrollLinks.length; i++) {
     event.preventDefault();
     var href = this.getAttribute('href');
     var elementId = href.substr(1);
-    var offset = 150;
+    var offset = 125;
     scrollToElementWithOffset(elementId, offset);
   });
 }
@@ -45,9 +45,6 @@ var body = document.querySelector('body');
 window.onload = function () {
   body.classList.remove('preload');
 };
-
-
-
 
 // ==========================================================
 // Store images in an array of objects
