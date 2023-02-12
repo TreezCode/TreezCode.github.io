@@ -46,6 +46,9 @@ window.onload = function () {
   body.classList.remove('preload');
 };
 
+
+
+
 // ==========================================================
 // Store images in an array of objects
 const images = [
