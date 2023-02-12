@@ -149,7 +149,6 @@ let currentPage = 1;
  * @returns {void}
  */
 const showPage = (pageNumber, images) => {
-
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentImages = images.slice(startIndex, endIndex);
@@ -157,14 +156,13 @@ const showPage = (pageNumber, images) => {
   galleryGrid.innerHTML = '';
   currentImages.forEach((image) => createImageElement(image));
   updateButtons(currentPage, itemsPerPage, images);
-}
+};
 
 /**
  * Updates the state of the filtered images based on the selected filter value
  * @returns {void}
  */
 const filterImages = () => {
-
   let selectedFilter = document.querySelector('.form-control').value;
   filteredImages = [...images];
 
@@ -179,7 +177,7 @@ const filterImages = () => {
   currentPage = 1;
   showPage(currentPage, filteredImages);
   showPageInfo(currentPage, itemsPerPage, filteredImages);
-}
+};
 
 /**
  * Updates the state of the filtered images based on the search input value
@@ -187,7 +185,6 @@ const filterImages = () => {
  * @returns {void}
  */
 const handleSearchInput = (event) => {
-
   const searchValue = event.target.value.toLowerCase();
 
   if (searchValue === '') {
@@ -204,15 +201,14 @@ const handleSearchInput = (event) => {
   currentPage = 1;
   showPage(currentPage, filteredImages);
   showPageInfo(currentPage, itemsPerPage, filteredImages);
-}
+};
 
 /**
  * Creates an image element to be rendered in the gallery grid
  * @param {Object} image - An object representing an image, with properties href, src, alt, category, title, and desc
  * @returns {HTMLDivElement} - A div element that represents the wrapped image and its associated elements, such as the link, title, description, and show description button
  */
-const createImageElement = (image)  => {
-
+const createImageElement = (image) => {
   // Create a div to wrap the image
   const imageWrap = document.createElement('div');
   imageWrap.classList.add('image-wrap', 'col-sm-6', 'col-md-4', 'col-lg-3');
@@ -278,7 +274,7 @@ const createImageElement = (image)  => {
   link.appendChild(img);
   galleryGrid.appendChild(imageWrap);
   return imageWrap;
-}
+};
 
 /**
  * Updates the state of the prev and next buttons based on the current page and number of images
@@ -288,8 +284,8 @@ const createImageElement = (image)  => {
  * @returns {void}
  */
 const updateButtons = (currentPage, itemsPerPage, currentImages) => {
-
-  const nextButtonClass = currentPage * itemsPerPage >= currentImages.length ? 'add' : 'remove';
+  const nextButtonClass =
+    currentPage * itemsPerPage >= currentImages.length ? 'add' : 'remove';
   nextButton.classList[nextButtonClass]('disabled');
 
   const prevButtonClass = currentPage === 1 ? 'add' : 'remove';
@@ -304,7 +300,7 @@ const updateButtons = (currentPage, itemsPerPage, currentImages) => {
     prevButton.style.display = 'block';
     nextButton.style.display = 'block';
   }
-}
+};
 
 /**
  * Shows the current page and total number of pages on the webpage
@@ -314,7 +310,6 @@ const updateButtons = (currentPage, itemsPerPage, currentImages) => {
  * @returns {void}
  */
 const showPageInfo = (currentPage, itemsPerPage, currentImages) => {
-
   const totalPages = Math.ceil(currentImages.length / itemsPerPage);
   const pageInfoElement = document.getElementById('pageNumber');
 
@@ -326,7 +321,7 @@ const showPageInfo = (currentPage, itemsPerPage, currentImages) => {
   } else {
     pageInfoElement.innerHTML = pageInfo;
   }
-}
+};
 showPageInfo(currentPage, itemsPerPage, filteredImages);
 
 /**
@@ -335,8 +330,10 @@ showPageInfo(currentPage, itemsPerPage, filteredImages);
  * @returns {void}
  */
 const handlePagination = (direction) => {
-
-  if (direction === 'next' && currentPage * itemsPerPage < filteredImages.length) {
+  if (
+    direction === 'next' &&
+    currentPage * itemsPerPage < filteredImages.length
+  ) {
     currentPage++;
   } else if (direction === 'prev' && currentPage > 1) {
     currentPage--;
@@ -347,7 +344,7 @@ const handlePagination = (direction) => {
   updateButtons(currentPage, itemsPerPage, filteredImages);
   showPageInfo(currentPage, itemsPerPage, filteredImages);
   scrollToElementWithOffset('gallery', 150);
-}
+};
 
 // Call the main function to display page
 showPage(currentPage, filteredImages);
@@ -362,14 +359,17 @@ prevButton.addEventListener('click', function (event) {
   handlePagination('prev');
 });
 // Add event listener to the filter select and search input elements
-document.querySelector('.form-control').addEventListener('change', filterImages);
-document.querySelector('.search-input').addEventListener('input', handleSearchInput);
+document
+  .querySelector('.form-control')
+  .addEventListener('change', filterImages);
+document
+  .querySelector('.search-input')
+  .addEventListener('input', handleSearchInput);
 
 // Handle magnifying glass for art gallery
 let mouseInsideImage = false;
 let magnifierEnabled = false;
 let magnification = 2;
-let touchStart = false;
 /**
  * Creates a magnifying glass effect for a given image element
  * @param {string} imgID - The ID of the image element to magnify
@@ -377,7 +377,6 @@ let touchStart = false;
  * @returns {void}
  */
 const magnify = (imgID, zoom) => {
-
   // If the magnifier is not enabled, return
   if (!magnifierEnabled) return;
 
@@ -405,15 +404,17 @@ const magnify = (imgID, zoom) => {
   const w = glass.offsetWidth / 2; // Half of the width of the magnifier glass
   const h = glass.offsetHeight / 2; // Half of the height of the magnifier glass
 
-  const createMagnifier = (e) => magnify(imgID, zoom);
+  const createMagnifier = (e) => {
+    e.preventDefault();
+    magnify(imgID, zoom);
+  };
 
   /**
- * Get the cursor position relative to the image element
- * @param {Event} e - The mouse or touch event
- * @returns {Object} - An object with x and y properties representing the cursor position
- */
+   * Get the cursor position relative to the image element
+   * @param {Event} e - The mouse or touch event
+   * @returns {Object} - An object with x and y properties representing the cursor position
+   */
   const getCursorPos = (e) => {
-
     let x = 0,
       y = 0;
     e = e || window.event;
@@ -425,22 +426,16 @@ const magnify = (imgID, zoom) => {
     x = x - window.pageXOffset;
     y = y - window.pageYOffset;
     return { x, y };
-  }
-  
+  };
+
   /**
    * Move the magnifier glass as the mouse/finger moves over the image/glass
    * @param {Event} e - The mouse or touch event
    * @returns {void}
    */
   const moveMagnifier = (e) => {
-    console.log(e);
 
     e.preventDefault();
-
-    // Check if touchStart flag is false
-    if (!touchStart) {
-      return;
-    }
 
     // Initialize x and y coordinates
     let x = 0,
@@ -474,31 +469,21 @@ const magnify = (imgID, zoom) => {
     y = Math.min(Math.max(y, h / zoom), img.height - h / zoom);
 
     // Set the position of magnifier glass
-    glass.style.left = `${x - w}px`;
-    glass.style.top = `${y - h}px`;
+    glass.style.left = `${x - w + 10}px`;
+    glass.style.top = `${y - h + 50}px`;
 
     // Set the background position of magnifier glass
-    glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${
-      y * zoom - h + bw
-    }px`;
-  }
+    glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${y * zoom - h + bw}px`;
+  };
 
   // Add event listeners to the magnifier glass and the image
-  glass.addEventListener('touchstart', createMagnifier);
-  glass.addEventListener('touchmove', moveMagnifier);
   img.addEventListener('touchstart', createMagnifier);
   img.addEventListener('touchmove', moveMagnifier);
+  glass.addEventListener('touchmove', moveMagnifier);
+  glass.addEventListener('touchend', glass.remove);
   glass.addEventListener('mousemove', moveMagnifier);
   img.addEventListener('mousemove', moveMagnifier);
-  glass.addEventListener('touchstart', () => {
-    touchStart = true;
-  });
-  glass.addEventListener('touchend', () => { 
-    touchStart = false;
-    glass.remove()
-  });
-
-}
+};
 
 // Prevent clicks from redirecting to link if magnifier is enabled
 const imageLinks = document.querySelectorAll('.img-link');

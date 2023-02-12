@@ -539,8 +539,8 @@ body::-webkit-scrollbar-thumb {
   cursor: none;
   z-index: 5;
   /*Set the size of the magnifier glass:*/
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }
 
 /* Contact
@@ -628,6 +628,9 @@ body::-webkit-scrollbar-thumb {
   .projects-grid .container {
     max-width: 100%;
   }
+  .toggle-magnifier-wrap {
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
   .carousel-caption {
@@ -636,10 +639,6 @@ body::-webkit-scrollbar-thumb {
   }
   .projects-grid .container {
     max-width: 100%;
-  }
-  .img-magnifier-glass {
-    width: 175px;
-    height: 175px;
   }
 }
 @media screen and (max-width: 676px) {
