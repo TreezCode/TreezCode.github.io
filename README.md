@@ -2,7 +2,7 @@
 
 Demo: [My Portfolio](https://iamtreez.com/)
 ## About 📖
-Here is my portfolio, showcasing my skills and passion in front-end web development.
+Here is my static website portfolio, showcasing some of my skills and passion in front-end web development.
 
 ## Built With 🔧
 * [HTML](https://html.com/) - The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. 

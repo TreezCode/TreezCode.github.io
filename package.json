@@ -1,4 +1,11 @@
 {
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "keywords": [],
+  "author": "Joey Kubalak",
+  "license": "MIT",
   "dependencies": {
     "sass": "^1.58.0"
   }
