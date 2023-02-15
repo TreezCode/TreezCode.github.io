@@ -1,19 +1,20 @@
 import imagesData from './constants/images.js';
-import { createImageElement } from './gallery/createImageElement.js';
-import { updateButtons, showPageInfo } from './gallery/updatePageElements.js';
-import { magnify } from './gallery/handleMagnify.js';
+import { createImageElement } from './gallery/components/createImageElement.js';
+import { updateButtons, showPageInfo } from './gallery/components/updatePageElements.js';
+import { magnify } from './gallery/components/handleMagnify.js';
 
 // Store elements to render the gallery
 const galleryGrid = document.querySelector('.gallery-grid');
-const imageLinks = document.querySelectorAll('.img-link');
 const prevButton = document.querySelector('.page-item.disabled');
 const nextButton = document.querySelector('.page-item:not(.disabled)');
 const filterSelect = document.querySelector('.form-control');
 const searchInput = document.querySelector('.search-input');
+const imageLinks = document.querySelectorAll('.img-link');
 const toggleMagnifierBtn = document.querySelector('.toggle-magnifier');
 const toggleMagnifierText = toggleMagnifierBtn.querySelector('.toggle-magnifier-text');
 const magnifierBtnBody = document.getElementById('toggleMagnifier');
 
+// Combine image categories to main image array
 const images = [
   ...imagesData.fractalOwlImages,
   ...imagesData.splashSilhouetteImages,
@@ -44,25 +45,20 @@ const showPage = (pageNumber, imagesArray) => {
   updateButtons(pageNumber, itemsPerPage, imagesArray);
   showPageInfo(pageNumber, itemsPerPage, imagesArray);
 };
-// Call the main function to display page
-showPage(currentPage, filteredImages);
 
 /**
  * Updates the state of the filtered images based on the selected filter value
  * @returns {void}
  */
 const filterImages = () => {
-  let selectedFilter = document.querySelector('.form-control').value;
+  let selectedFilter = filterSelect.value;
   filteredImages = [...images];
 
   if (selectedFilter !== 'All') {
-    const currentImages = document.querySelectorAll('.image-wrap');
-    currentImages.forEach((img) => img.remove());
-    filteredImages = filteredImages.filter(
-      (img) => img.category === selectedFilter
-    );
+    filteredImages = filteredImages.filter(img => img.category === selectedFilter);
     showPageInfo(currentPage, itemsPerPage, filteredImages);
   }
+  searchInput.value = '';
   currentPage = 1;
   showPage(currentPage, filteredImages);
   showPageInfo(currentPage, itemsPerPage, filteredImages);
@@ -73,13 +69,13 @@ const filterImages = () => {
  * @param {Event} event - The event that triggered the function call
  * @returns {void}
  */
-const handleSearchInput = (event) => {
-  const searchValue = event.target.value.toLowerCase();
+const handleSearchInput = (e) => {
+  const searchValue = e.target.value.toLowerCase();
 
   if (searchValue === '') {
     filteredImages = [...images];
   } else if (searchValue !== previousSearchValue) {
-    filteredImages = images.filter((image) => {
+    filteredImages = filteredImages.filter((image) => {
       return (
         image.title.toLowerCase().includes(searchValue) ||
         image.category.toLowerCase().includes(searchValue)
@@ -98,10 +94,7 @@ const handleSearchInput = (event) => {
  * @returns {void}
  */
 const handlePagination = (direction) => {
-  if (
-    direction === 'next' &&
-    currentPage * itemsPerPage < filteredImages.length
-  ) {
+  if (direction === 'next' && currentPage * itemsPerPage < filteredImages.length) {
     currentPage++;
   } else if (direction === 'prev' && currentPage > 1) {
     currentPage--;
@@ -155,8 +148,8 @@ toggleMagnifierBtn.addEventListener('click', (e) => {
     toggleMagnifierText.textContent = 'Enable Magnifier';
     e.target.classList.remove('active');
     magnifierBtnBody.classList.remove('active');
-    // remove any existing magnifying glasses when magnifier is disabled
-    const glasses = document.querySelectorAll('.img-magnifier-glass');
-    glasses.forEach((glass) => glass.remove());
   }
 });
+
+// Call the main function to render page
+showPage(currentPage, filteredImages);

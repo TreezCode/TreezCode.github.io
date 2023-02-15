@@ -42,8 +42,8 @@ export const magnify = (() => {
   
     /**
      * Get the cursor position relative to the image element
-     * @param {Event} e - The mouse or touch event
-     * @returns {Object} - An object with x and y properties representing the cursor position
+     * @param {Event} e - The pointer event
+     * @returns {Object} - An object with x and y properties representing the pointer position
      */
     const getCursorPos = (e) => {
       let x = 0,
@@ -71,16 +71,9 @@ export const magnify = (() => {
       let x = 0,
         y = 0;
   
-      // Check if event is a touch event or mouse event
-      if (e.touches) {
-        x = e.touches[0].clientX;
-        y = e.touches[0].clientY;
-      } else {
-        // Get cursor position for mouse event
-        const pos = getCursorPos(e);
-        x = pos.x;
-        y = pos.y;
-      }
+      const pos = getCursorPos(e);
+      x = pos.x;
+      y = pos.y;
   
       // Check if cursor position is outside of image
       if (x > img.width || x < 0 || y > img.height || y < 0) {
@@ -103,18 +96,14 @@ export const magnify = (() => {
       glass.style.top = `${y - h + 50}px`;
   
       // Set the background position of magnifier glass
-      glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${
-        y * zoom - h + bw
-      }px`;
+      glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${y * zoom - h + bw}px`;
     };
   
     // Add event listeners to the magnifier glass and the image
-    img.addEventListener('touchstart', createMagnifier);
-    img.addEventListener('touchmove', moveMagnifier);
-    glass.addEventListener('touchmove', moveMagnifier);
-    glass.addEventListener('touchend', glass.remove);
-    glass.addEventListener('mousemove', moveMagnifier);
-    img.addEventListener('mousemove', moveMagnifier);
+    img.addEventListener('pointerdown', createMagnifier);
+    img.addEventListener('pointermove', moveMagnifier);
+    glass.addEventListener('pointermove', moveMagnifier);
+    glass.addEventListener('pointerup', glass.remove);
   };
 
 })();
