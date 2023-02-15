@@ -1,4 +1,4 @@
-
+// Store elements to render the gallery
 const galleryGrid = document.querySelector('.gallery-grid');
 const prevButton = document.querySelector('.page-item.disabled');
 const nextButton = document.querySelector('.page-item:not(.disabled)');
