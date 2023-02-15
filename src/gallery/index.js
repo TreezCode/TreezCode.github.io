@@ -1,10 +1,12 @@
-import { createImageElement } from "./components/createImageElement";
-import { showPageInfo, updateButtons } from "./components/updatePageElements";
-import { magnify } from "./components/handleMagnify";
+import { createImageElement } from "./components/imageElements";
+import { showPageInfo, updateButtons } from "./components/paginationElements";
+import { handleMagnify } from "./components/magnify";
+import { renderGallery } from "./components/gallery";
 
 export default {
     createImageElement,
     showPageInfo,
     updateButtons,
-    magnify,
+    handleMagnify,
+    renderGallery,
 };

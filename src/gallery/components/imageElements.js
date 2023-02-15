@@ -6,6 +6,7 @@
  */
 export const createImageElement = (() => {
   return (image, galleryGrid) => {
+    
     // Create a div to wrap the image
     const imageWrap = document.createElement('div');
     imageWrap.classList.add('image-wrap', 'col-sm-6', 'col-md-4', 'col-lg-3');

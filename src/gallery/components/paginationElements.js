@@ -33,7 +33,7 @@ export const showPageInfo = (currentPage, itemsPerPage, currentImages) => {
  * @returns {void}
  */
 export const updateButtons = (currentPage, itemsPerPage, currentImages) => {
-  
+
   const nextButtonClass = currentPage * itemsPerPage >= currentImages.length ? 'add' : 'remove';
   nextButton.classList[nextButtonClass]('disabled');
 

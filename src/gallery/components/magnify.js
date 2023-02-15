@@ -6,7 +6,7 @@
  * @param {boolean} mouseInsideImageFlag - Indicates if the mouse is inside the image element
  * @returns {void}
  */
-export const magnify = (() => {
+export const handleMagnify = (() => {
   return (imgID, zoom, magnifierEnabledFlag, mouseInsideImageFlag) => {
     // If the magnifier is not enabled, return
     if (!magnifierEnabledFlag) return;
@@ -37,7 +37,7 @@ export const magnify = (() => {
   
     const createMagnifier = (e) => {
       e.preventDefault();
-      magnify(imgID, zoom, magnifierEnabledFlag, mouseInsideImageFlag);
+      handleMagnify(imgID, zoom, magnifierEnabledFlag, mouseInsideImageFlag);
     };
   
     /**
