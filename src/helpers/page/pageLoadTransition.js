@@ -1,5 +1,5 @@
 var body = document.querySelector('body');
-window.onload = function () {
+window.onload = () => {
   if (body) {
     body.classList.remove('preload');
   }

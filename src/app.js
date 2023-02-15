@@ -1,17 +1,18 @@
 import imagesData from './constants/images.js';
-import createImageElement from './utils/createImageElement.js';
-import updateButtons from './utils/updatePaginationButtons.js';
-import showPageInfo from './utils/showPageInfo.js';
-import handleMagnify from './utils/handleMagnify.js';
-// import showPage from './showPage.js';
+import { createImageElement } from './gallery/createImageElement.js';
+import { updateButtons, showPageInfo } from './gallery/updatePageElements.js';
+import { magnify } from './gallery/handleMagnify.js';
 
 // Store elements to render the gallery
 const galleryGrid = document.querySelector('.gallery-grid');
+const imageLinks = document.querySelectorAll('.img-link');
 const prevButton = document.querySelector('.page-item.disabled');
 const nextButton = document.querySelector('.page-item:not(.disabled)');
+const filterSelect = document.querySelector('.form-control');
+const searchInput = document.querySelector('.search-input');
 const toggleMagnifierBtn = document.querySelector('.toggle-magnifier');
 const toggleMagnifierText = toggleMagnifierBtn.querySelector('.toggle-magnifier-text');
-const buttonBody = document.getElementById('toggleMagnifier');
+const magnifierBtnBody = document.getElementById('toggleMagnifier');
 
 const images = [
   ...imagesData.fractalOwlImages,
@@ -30,18 +31,18 @@ let magnification = 2;
 /**
  * Updates the content of the gallery based on the page number
  * @param {number} currentPage - The number of the current page
- * @param {Array} images - An array of image data
+ * @param {Array} imagesArray - An array of image data
  * @returns {void}
  */
-const showPage = (currentPage, filteredImages) => {
-  const startIndex = (currentPage - 1) * itemsPerPage;
+const showPage = (pageNumber, imagesArray) => {
+  const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentImages = filteredImages.slice(startIndex, endIndex);
+  const currentImages = imagesArray.slice(startIndex, endIndex);
 
   galleryGrid.innerHTML = '';
   currentImages.forEach((image) => createImageElement(image, galleryGrid));
-  updateButtons(currentPage, itemsPerPage, filteredImages);
-  showPageInfo(currentPage, itemsPerPage, filteredImages);
+  updateButtons(pageNumber, itemsPerPage, imagesArray);
+  showPageInfo(pageNumber, itemsPerPage, imagesArray);
 };
 // Call the main function to display page
 showPage(currentPage, filteredImages);
@@ -90,9 +91,6 @@ const handleSearchInput = (event) => {
   showPage(currentPage, filteredImages);
   showPageInfo(currentPage, itemsPerPage, filteredImages);
 };
-// Add event listener to the filter select and search input elements
-document.querySelector('.form-control').addEventListener('change', filterImages);
-document.querySelector('.search-input').addEventListener('input', handleSearchInput);
 
 /**
  * Handles the pagination for the image gallery
@@ -116,47 +114,49 @@ const handlePagination = (direction) => {
   scrollToElementWithOffset('gallery', 150);
 };
 
-// Add event listeners to the pagination elements
-nextButton.addEventListener('click', function (event) {
-  event.preventDefault();
+// Add event listeners to the filter select and search input elements
+filterSelect.addEventListener('change', filterImages);
+searchInput.addEventListener('input', handleSearchInput);
+
+// Add event listeners to the next and previous pagination elements
+nextButton.addEventListener('click', (e) => {
+  e.preventDefault();
   handlePagination('next');
 });
-prevButton.addEventListener('click', function (event) {
-  event.preventDefault();
+prevButton.addEventListener('click', (e) => {
+  e.preventDefault();
   handlePagination('prev');
 });
 
-// Prevent clicks from redirecting to link if magnifier is enabled
-const imageLinks = document.querySelectorAll('.img-link');
+// Add event listener to prevent clicks from redirecting to link if magnifier is enabled
 imageLinks.forEach((link) => {
-  link.addEventListener('click', function (event) {
+  link.addEventListener('click', (e) => {
     if (magnifierEnabled) {
-      event.preventDefault();
+      e.preventDefault();
     }
   });
 });
 
-// Event listener for the mouseover event on images within the .gallery-grid container
-galleryGrid.addEventListener('mouseover', function (e) {
+// Add event listener for the mouseover event on images within the .gallery-grid container
+galleryGrid.addEventListener('mouseover', (e) => {
     if (e.target.matches('.gallery-img')) {
-      handleMagnify(e.target.id, magnification, magnifierEnabled, mouseInsideImage);
+      magnify(e.target.id, magnification, magnifierEnabled, mouseInsideImage);
     }
   });
 
-// Toggles the magnifier functionality and updates the UI to reflect the change
-toggleMagnifierBtn.addEventListener('click', function (e) {
+// Add event listener to toggle the magnifier functionality and update the UI to reflect the change
+toggleMagnifierBtn.addEventListener('click', (e) => {
   magnifierEnabled = !magnifierEnabled;
   if (magnifierEnabled) {
     toggleMagnifierText.textContent = 'Disable Magnifier';
     e.target.classList.add('active');
-    buttonBody.classList.add('active');
+    magnifierBtnBody.classList.add('active');
   } else {
     toggleMagnifierText.textContent = 'Enable Magnifier';
     e.target.classList.remove('active');
-    buttonBody.classList.remove('active');
+    magnifierBtnBody.classList.remove('active');
     // remove any existing magnifying glasses when magnifier is disabled
     const glasses = document.querySelectorAll('.img-magnifier-glass');
     glasses.forEach((glass) => glass.remove());
   }
 });
-

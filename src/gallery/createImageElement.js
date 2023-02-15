@@ -4,7 +4,7 @@
  * @param {HTMLElement} galleryGrid - The element that represents the gallery grid
  * @returns {HTMLDivElement} - A div element that represents the wrapped image and its associated elements, such as the link, title, description, and show description button
  */
-const createImageElement = (function () {
+export const createImageElement = (() => {
   return (image, galleryGrid) => {
     // Create a div to wrap the image
     const imageWrap = document.createElement('div');
@@ -26,7 +26,7 @@ const createImageElement = (function () {
     img.setAttribute('data-title', image.title);
     img.setAttribute('data-desc', image.desc);
     img.classList.add('gallery-img', 'img-fluid');
-    img.addEventListener('contextmenu', function (e) {
+    img.addEventListener('contextmenu', (e) => {
       e.preventDefault();
     });
 
@@ -50,7 +50,7 @@ const createImageElement = (function () {
     showDescriptionButton.textContent = 'Show Description';
     showDescriptionButton.classList.add('btn', 'btn-show-description');
     showDescriptionButton.id = 'showDescriptionBtn';
-    showDescriptionButton.addEventListener('click', function () {
+    showDescriptionButton.addEventListener('click', () => {
       showDescriptionButton.classList.toggle('active');
       description.classList.toggle('active');
       if (showDescriptionButton.classList.contains('active')) {
@@ -74,4 +74,3 @@ const createImageElement = (function () {
   };
 })();
 
-export default createImageElement;

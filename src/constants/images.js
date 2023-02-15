@@ -85,7 +85,7 @@ const splashSilhouetteImages = [
   },
 ];
 
-const imagesData = (function () {
+const imagesData = (() => {
   return {
     fractalOwlImages,
     splashSilhouetteImages,

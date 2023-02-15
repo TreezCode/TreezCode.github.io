@@ -11,6 +11,7 @@ function stickyHeader() {
     upArrow.style.display = 'none';
   }
 }
+
 // Call sticky header on scroll
 window.onscroll = () => stickyHeader();
 
