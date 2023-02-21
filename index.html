@@ -226,8 +226,8 @@
     ========================================== -->
     <div class="container-fluid gallery-wrap" id="gallery" >
         <h2 class="text-center">My Art Gallery</h2>
-        <div class="gallery-nav d-flex justify-content-around align-items-end my-3">
-            <div class="filter-wrap">
+        <div class="gallery-nav d-flex justify-content-around align-items-end">
+            <div class="filter-wrap my-2">
                 <div class="filter">
                     <p class="mb-0">Filter:</p>
                     <select class="form-control form-control-sm d-inline-block">
@@ -236,22 +236,35 @@
                         <option>Copper-Goddess</option>
                         <option>Fractal-Owl</option>
                         <option>Splash-Silhouette</option>
+                        <option>None</option>
                          
                     </select>
                 </div>
             </div>
-            <div class="search-wrap">
+            <div class="search-wrap my-2">
                 <div class="search">
                     <p class="mb-0">Search:</p>
                     <input type="text" class="search-input form-control form-control-sm d-inline-block">
                 </div>
             </div>
-            <div class="toggle-magnifier-wrap">
-                <button class="toggle-magnifier btn" id="toggleMagnifier" onclick="">
+            <div class="items-per-wrap mb-2">
+                <div class="items-per">
+                    <p class="mb-0">Items per page:</p>
+                    <select class="form-control form-control-sm d-inline-block w-auto" id="editPageInfo">
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="48">48</option>
+                        <option value="0">None</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="toggle-magnifier-wrap text-center my-1">
+            <button class="toggle-magnifier btn" id="toggleMagnifier" onclick="">
                 <span class="toggle-magnifier-text">Enable Magnifier</span>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            </div>
         </div>
         <div class="row gallery-grid">
         </div>
@@ -268,15 +281,6 @@
                 </ul>
             </nav>
         </div>
-        <div class="text-center">
-            <p class="mb-1">Items per page:</p>
-            <select class="form-control form-control-sm d-inline-block w-auto" id="editPageInfo">
-              <option value="6">6</option>
-              <option value="12">12</option>
-              <option value="24">24</option>
-              <option value="48">48</option>
-            </select>
-          </div>
     </div>
     <!-- Gallery End
     ========================================== -->
@@ -289,7 +293,7 @@
             <div class="container text-center">
                 <div class="contact-content">
                     <h4>Email:</h4>
-                    <h5><a href="mailto:j.kubalak@iamtreez.com">j.kubalak@iamtreez.com</a></h5>
+                    <h5><a href="mailto:j.kubalak@iamtreez.com">treezcode@gmail.com</a></h5>
                 </div>
             </div>
         </div>

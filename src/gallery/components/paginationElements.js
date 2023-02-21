@@ -17,7 +17,7 @@ export const showPageInfo = (currentPage, itemsPerPage, currentImages) => {
 
   let pageInfo = `Page ${currentPage} of ${totalPages}`;
 
-  if (currentImages.length === 0) {
+  if (currentImages.length === 0 || itemsPerPage === 0) {
     pageInfo = `Page 0 of 0`;
     pageInfoElement.innerHTML = pageInfo;
   } else {
@@ -40,7 +40,7 @@ export const updateButtons = (currentPage, itemsPerPage, currentImages) => {
   const prevButtonClass = currentPage === 1 ? 'add' : 'remove';
   prevButton.classList[prevButtonClass]('disabled');
 
-  if (currentImages.length === 0) {
+  if (currentImages.length === 0 || itemsPerPage === 0) {
     galleryGrid.innerHTML = '<p class="gallery-msg">No images to display</p>';
     prevButton.style.display = 'none';
     nextButton.style.display = 'none';

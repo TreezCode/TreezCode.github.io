@@ -382,8 +382,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .gallery-grid {
-  column-gap: 1.5em;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .gallery-msg {
@@ -392,11 +391,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .filter-wrap,
-.toggle-magnifier-wrap,
+.items-per-wrap,
 .search-wrap {
   display: flex;
   justify-content: center;
   width: 200px;
+  margin: 0 1rem;
 }
 
 .search {
@@ -506,25 +506,6 @@ body::-webkit-scrollbar-thumb {
   cursor: auto;
   background-color: rgba(31, 22, 31, 0.726);
   border: 1px solid #343a40;
-}
-
-@media (min-width: 576px) {
-  .gallery-grid {
-    column-count: 2;
-    justify-content: space-around;
-  }
-}
-
-@media (min-width: 992px) {
-  .gallery-grid {
-    column-count: 3;
-  }
-}
-
-@media (min-width: 1200px) {
-  .gallery-grid {
-    column-count: 4;
-  }
 }
 
 /* Magnifying Glass
